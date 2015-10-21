@@ -2,6 +2,8 @@
 
 a:
 b:
+c:
+d:
     INBOX   
     COPYTO   0
     COPYFROM 9
@@ -9,18 +11,16 @@ b:
     BUMPUP   8
     COPYTO   7
     OUTBOX  
-c:
-d:
+e:
     COPYFROM 7
     OUTBOX  
     COPYFROM 7
     ADD      8
     COPYTO   8
     SUB      0
-    JUMPZ    f
-    JUMPN    e
-    JUMP     b
-e:
+    JUMPZ    g
+    JUMPN    f
+    JUMP     d
 f:
     COPYFROM 8
     OUTBOX  
@@ -28,6 +28,14 @@ f:
     ADD      7
     COPYTO   7
     SUB      0
-    JUMPZ    d
-    JUMPN    c
+    JUMPZ    h
+    JUMPN    e
+    JUMP     c
+g:
+    COPYFROM 8
+    OUTBOX  
+    JUMP     b
+h:
+    COPYFROM 7
+    OUTBOX  
     JUMP     a
